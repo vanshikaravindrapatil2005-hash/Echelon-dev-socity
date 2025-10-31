@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Echelon Dev Society</title>
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* 🌈 Animated Gradient Background */
+    body {
+      background: linear-gradient(-45deg, #1e3c72, #2a5298, #00bcd4, #0f2027);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+      color: #e6edf3;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .logo {
+      width: 120px;
+      margin-bottom: 20px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px #00bcd4;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #00bcd4;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      color: #00eaff;
+      height: 30px;
+    }
+
+    .btn {
+      background: #00bcd4;
+      border: none;
+      padding: 10px 25px;
+      color: #fff;
+      margin-top: 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #00bcd4;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background: #0288d1;
+      box-shadow: 0 0 20px #00eaff;
+    }
+
+    section {
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #00eaff;
+      text-shadow: 0 0 10px #00bcd4;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(22, 27, 34, 0.8);
+      padding: 20px 30px;
+      border-radius: 12px;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #00bcd4;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      background: rgba(31, 41, 55, 0.9);
+      box-shadow: 0 0 20px #00eaff;
+    }
+
+    .event-gallery img {
+      width: 200px;
+      margin: 10px;
+      border-radius: 10px;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #00bcd4;
+    }
+
+    .event-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00eaff;
+    }
+
+    .team-grid {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .member {
+      background: rgba(22, 27, 34, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      width: 180px;
+      box-shadow: 0 0 10px #00bcd4;
+      transition: 0.3s;
+    }
+
+    .member:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px #00eaff;
+    }
+
+    .member img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .member h3 {
+      margin-top: 10px;
+      color: #00bcd4;
+    }
+
+    form input {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      width: 300px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
+
+    .socials a {
+      color: #00eaff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .socials a:hover {
+      text-decoration: underline;
+      color: #00bcd4;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      padding: 20px;
+      color: #ccc;
+      font-size: 0.9rem;
+      margin-top: 50px;
+      box-shadow: 0 -2px 10px rgba(0, 188, 212, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Hero Section -->
+  <header id="hero">
+    <div class="hero-content" data-aos="fade-up">
+      <img src="logo.png" alt="Echelon Dev Society Logo" class="logo" />
+      <h1>Echelon Dev Society</h1>
+      <h3 id="typed-text"></h3>
+      <button class="btn" onclick="scrollToSection('about')">Know More ↓</button>
+    </div>
+  </header>
+
+  <!-- About Us -->
+  <section id="about" data-aos="fade-up">
+    <h2>About Us</h2>
+    <p>
+      Founded in 2025, <b>Echelon Dev Society</b> is a vibrant student community dedicated to 
+      coding, innovation, and collaboration. We empower students to explore development across
+      web, mobile, and AI, while creating impactful tech projects together.
+    </p>
+  </section>
+
+  <!-- Our Domains -->
+  <section id="domains" data-aos="fade-up">
+    <h2>Our Domains</h2>
+    <div class="cards">
+      <div class="card">💻 Web Development</div>
+      <div class="card">🤖 AI & ML</div>
+      <div class="card">📱 App Development</div>
+      <div class="card">⚙️ Hackathons</div>
+      <div class="card">💬 Workshops</div>
+    </div>
+  </section>
+
+  <!-- Events -->
+  <section id="events" data-aos="fade-up">
+    <h2>Our Events</h2>
+    <p>From hackathons to coding challenges — we make learning exciting!</p>
+    <div class="event-gallery">
+      <img src="event1.jpg" alt="Event 1">
+      <img src="event2.jpg" alt="Event 2">
+      <img src="event3.jpg" alt="Event 3">
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team" data-aos="fade-up">
+    <h2>Our Team</h2>
+    <div class="team-grid">
+      <div class="member">
+        <img src="president.jpg" alt="President">
+        <h3>vanshika patil</h3>
+        <p>President</p>
+      </div>
+      <div class="member">
+        <img src="vp.jpg" alt="Vice President">
+        <h3>Vanshika patil</h3>
+        <p>Vice President</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Us / Contact -->
+  <section id="contact" data-aos="fade-up">
+    <h2>Join Us</h2>
+    <p>Be part of Echelon Dev Society! Let's code and innovate together 🚀</p>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <button class="btn">Join Now</button>
+    </form>
+    <p class="socials">
+      Connect with us:
+      <a href="#">Instagram</a> |
+      <a href="#">LinkedIn</a> |
+      <a href="#">GitHub</a>
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Echelon Dev Society | All Rights Reserved</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Typing Effect
+    const text = ["Code. Create. Collaborate.", "Building the Future...", "Join the Revolution!"];
+    let index = 0;
+    let charIndex = 0;
+    let currentText = "";
+    let isDeleting = false;
+    const typedText = document.getElementById("typed-text");
+
+    function type() {
+      currentText = text[index];
+      typedText.textContent = currentText.substring(0, charIndex);
+
+      if (!isDeleting && charIndex < currentText.length) {
+        charIndex++;
+        setTimeout(type, 100);
+      } else if (isDeleting && charIndex > 0) {
+        charIndex--;
+        setTimeout(type, 50);
+      } else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) index = (index + 1) % text.length;
+        setTimeout(type, 1000);
+      }
+    }
+    type();
+
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
